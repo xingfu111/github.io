@@ -1,104 +1,374 @@
-var iUp = (function () {
-	var t = 0,
-		d = 150,
-		clean = function () {
-			t = 0;
-		},
-		up = function (e) {
-			setTimeout(function () {
-				$(e).addClass("up")
-			}, t);
-			t += d;
-		},
-		down = function (e) {
-			$(e).removeClass("up");
-		},
-		toggle = function (e) {
-			setTimeout(function () {
-				$(e).toggleClass("up")
-			}, t);
-			t += d;
-		};
-	return {
-		clean: clean,
-		up: up,
-		down: down,
-		toggle: toggle
-	}
-})();
+/* -------------------------------------------
 
-$(document).ready(function () {
+Name: 		Toria
+Version:  1.0
 
-	// 获取一言数据
-	fetch('https://v1.hitokoto.cn').then(function (res) {
-		return res.json();
-	}).then(function (e) {
-		$('#description').html(e.hitokoto + "<br/> -「<strong>" + e.from + "</strong>」")
-	}).catch(function (err) {
-		console.error(err);
-	})
-// var url = 'https://query.yahooapis.com/v1/public/yql' + 
-	// '?q=' + encodeURIComponent('select * from json where url=@url') +
-	// '&url=' + encodeURIComponent('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8') +
-	// '&format=json&callback=?';
+------------------------------------------- */
 
-	/**
-	 * 获取Bing壁纸
-	 * 原先 YQL 已经无法提供服务了
-	 * 改用 JsonBird：https://bird.ioliu.cn/
-	 * 
-	 */
-	var url = '';
-	var imgUrls = JSON.parse(sessionStorage.getItem("imgUrls"));
-	var index = sessionStorage.getItem("index");
-	var $panel = $('#panel');
-	if (imgUrls == null) {
-		imgUrls = new Array();
-		index = 0;
-		$.get(url, function (result) {
-			images = result.images;
-			for (let i = 0; i < images.length; i++) {
-				const item = images[i];
-				imgUrls.push(item.url);
-			}
-			var imgUrl = imgUrls[index];
-			var url = "https://www.bing.com" + imgUrl;
-			$panel.css("background", "url('" + url + "') center center no-repeat #666");
-			$panel.css("background-size", "cover");
-			sessionStorage.setItem("imgUrls", JSON.stringify(imgUrls));
-			sessionStorage.setItem("index", index);
-		});
-	} else {
-		if (index == 7)
-			index = 0;
-		else
-			index++;
-		var imgUrl = imgUrls[index];
-		var url = "https://www.bing.com" + imgUrl;
-		$panel.css("background", "url('" + url + "') center center no-repeat #666");
-		$panel.css("background-size", "cover");
-		sessionStorage.setItem("index", index);
-	}
+$(function() {
 
-	$(".iUp").each(function (i, e) {
-		iUp.up(e);
-	});
+  "use strict";
 
-	$(".js-avatar")[0].onload = function () {
-		$(".js-avatar").addClass("show");
-	}
-});
+  /***************************
 
-$('.btn-mobile-menu__icon').click(function () {
-	if ($('.navigation-wrapper').css('display') == "block") {
-		$('.navigation-wrapper').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-			$('.navigation-wrapper').toggleClass('visible animated bounceOutUp');
-			$('.navigation-wrapper').off('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend');
-		});
-		$('.navigation-wrapper').toggleClass('animated bounceInDown animated bounceOutUp');
+  preloader
 
-	} else {
-		$('.navigation-wrapper').toggleClass('visible animated bounceInDown');
-	}
-	$('.btn-mobile-menu__icon').toggleClass('social iconfont icon-list social iconfont icon-ngleup animated fadeIn');
+  ***************************/
+
+  $(document).ready(function() {
+    $('html').addClass('is-animating');
+    $(".trm-scroll-container").animate({
+      opacity: 0,
+    });
+    setTimeout(function() {
+      $('html').removeClass('is-animating');
+      $(".trm-scroll-container").animate({
+        opacity: 1,
+      }, 600);
+    }, 1000);
+  });
+
+  /***************************
+
+  swup
+
+  ***************************/
+  const options = {
+    containers: ['#trm-dynamic-content'],
+    animateHistoryBrowsing: true,
+    linkSelector: '.trm-menu a:not([data-no-swup]), .trm-anima-link:not([data-no-swup])',
+    animationSelector: '[class="trm-swup-animation"]'
+  };
+  const swup = new Swup(options);
+  /***************************
+
+  menu
+
+  ***************************/
+  $('.trm-menu-btn').on('click', function() {
+    $('.trm-menu-btn , .trm-right-side').toggleClass('trm-active');
+  })
+  $('.trm-menu ul li a').on('click', function() {
+    $('.trm-menu-btn , .trm-right-side').removeClass('trm-active');
+  })
+  /***************************
+
+  mode switch
+
+  ***************************/
+  $('.trm-mode-switcher').clone().appendTo('.trm-mode-switcher-place');
+  $('#trm-swich').change(function() {
+    if (this.checked) {
+      $('.trm-hidden-switcher input').prop("checked", true);
+      $('.trm-mode-swich-animation-frame').addClass('trm-active');
+      $("#trm-scroll-container").animate({
+        opacity: 0,
+      }, 600, function() {
+        setTimeout(function() {
+          $('.trm-mode-swich-animation').addClass('trm-active');
+          $("#trm-switch-style").attr("href", "css/style-dark.css");
+        }, 200);
+        setTimeout(function() {
+          $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+          $("#trm-scroll-container").animate({
+            opacity: 1,
+          }, 600);
+        }, 1000);
+      });
+    } else {
+      $('.trm-hidden-switcher input').prop("checked", false);
+      $('.trm-mode-swich-animation-frame').addClass('trm-active');
+      $("#trm-scroll-container").animate({
+        opacity: 0,
+      }, 600, function() {
+        setTimeout(function() {
+          $('.trm-mode-swich-animation').removeClass('trm-active');
+          $("#trm-switch-style").attr("href", "css/style-light.css");
+        }, 200);
+        setTimeout(function() {
+          $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+          $("#trm-scroll-container").animate({
+            opacity: 1,
+          }, 600);
+        }, 1000);
+      });
+    }
+  });
+  /***************************
+
+  counters
+
+  ***************************/
+  $('.trm-counter').each(function() {
+    $(this).prop('Counter', 0).animate({
+      Counter: $(this).text()
+    }, {
+      duration: 2000,
+      easing: 'linear',
+      step: function(now) {
+        $(this).text(Math.ceil(now));
+      }
+    });
+  });
+  /***************************
+
+  locomotive scroll
+
+  ***************************/
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('#trm-scroll-container'),
+    smooth: true,
+    lerp: .1
+  });
+  document.addEventListener('swup:contentReplaced', (event) => {
+    scroll.destroy()
+  });
+
+  /***************************
+
+  slideshow
+
+  ***************************/
+  var swiper = new Swiper('.trm-slideshow', {
+    slidesPerView: 1,
+    effect: 'fade',
+    parallax: true,
+    autoplay: true,
+    speed: 1400,
+  });
+  /***************************
+
+  testimonials slider
+
+  ***************************/
+  var swiper = new Swiper('.trm-testimonials-slider', {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    parallax: true,
+    autoplay: false,
+    speed: 1400,
+    pagination: {
+      el: '.trm-testimonials-slider-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.trm-testimonials-slider-next',
+      prevEl: '.trm-testimonials-slider-prev',
+    },
+
+  });
+  /***************************
+
+  fancybox
+
+  ***************************/
+  $('[data-fancybox]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "thumbs",
+      "close",
+    ],
+  });
+  $('[data-fancybox="gallery"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "thumbs",
+      "close",
+    ],
+  });
+  $('[data-fancybox="portfolio"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "thumbs",
+      "close",
+    ],
+  });
+  $.fancybox.defaults.hash = false;
+
+  /*----------------------------------------------------------
+  ------------------------------------------------------------
+
+  REINIT
+
+  ------------------------------------------------------------
+  ----------------------------------------------------------*/
+  document.addEventListener("swup:contentReplaced", function() {
+
+    /***************************
+
+    preloader
+
+    ***************************/
+    $(".trm-scroll-container").animate({
+      opacity: 1,
+    }, 600);
+    /***************************
+
+    menu
+
+    ***************************/
+    $('.trm-menu-btn').on('click', function() {
+      $('.trm-menu-btn , .trm-right-side').toggleClass('trm-active');
+    })
+    $('.trm-menu ul li a').on('click', function() {
+      $('.trm-menu-btn , .trm-right-side').removeClass('trm-active');
+    })
+    /***************************
+
+    mode switch
+
+    ***************************/
+    $('.trm-mode-switcher').clone().appendTo('.trm-mode-switcher-place');
+    $('#trm-swich').change(function() {
+      if (this.checked) {
+        $('.trm-hidden-switcher input').prop("checked", true);
+        $('.trm-mode-swich-animation-frame').addClass('trm-active');
+        $("#trm-scroll-container").animate({
+          opacity: 0,
+        }, 600, function() {
+          setTimeout(function() {
+            $('.trm-mode-swich-animation').addClass('trm-active');
+            $("#trm-switch-style").attr("href", "css/style-dark.css");
+          }, 200);
+          setTimeout(function() {
+            $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+            $("#trm-scroll-container").animate({
+              opacity: 1,
+            }, 600);
+          }, 1000);
+        });
+      } else {
+        $('.trm-hidden-switcher input').prop("checked", false);
+        $('.trm-mode-swich-animation-frame').addClass('trm-active');
+        $("#trm-scroll-container").animate({
+          opacity: 0,
+        }, 600, function() {
+          setTimeout(function() {
+            $('.trm-mode-swich-animation').removeClass('trm-active');
+            $("#trm-switch-style").attr("href", "css/style-light.css");
+          }, 200);
+          setTimeout(function() {
+            $('.trm-mode-swich-animation-frame').removeClass('trm-active');
+            $("#trm-scroll-container").animate({
+              opacity: 1,
+            }, 600);
+          }, 1000);
+        });
+      }
+    });
+    /***************************
+
+    counters
+
+    ***************************/
+    $('.trm-counter').each(function() {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 2000,
+        easing: 'linear',
+        step: function(now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+    });
+    /***************************
+
+    locomotive scroll
+
+    ***************************/
+    const scroll = new LocomotiveScroll({
+      el: document.querySelector('#trm-scroll-container'),
+      smooth: true,
+      lerp: .1
+    });
+    document.addEventListener('swup:contentReplaced', (event) => {
+      scroll.destroy()
+    });
+    /***************************
+
+    slideshow
+
+    ***************************/
+    var swiper = new Swiper('.trm-slideshow', {
+      slidesPerView: 1,
+      effect: 'fade',
+      parallax: true,
+      autoplay: true,
+      speed: 1400,
+    });
+    /***************************
+
+    testimonials slider
+
+    ***************************/
+    var swiper = new Swiper('.trm-testimonials-slider', {
+      slidesPerView: 1,
+      spaceBetween: 40,
+      parallax: true,
+      autoplay: false,
+      speed: 1400,
+      pagination: {
+        el: '.trm-testimonials-slider-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.trm-testimonials-slider-next',
+        prevEl: '.trm-testimonials-slider-prev',
+      },
+
+    });
+    /***************************
+
+    fancybox
+
+    ***************************/
+    $('[data-fancybox]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close",
+      ],
+    });
+    $('[data-fancybox="gallery"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close",
+      ],
+    });
+    $('[data-fancybox="portfolio"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close",
+      ],
+    });
+    $.fancybox.defaults.hash = false;
+  });
+
 });
