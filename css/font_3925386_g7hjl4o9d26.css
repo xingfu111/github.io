@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3925386 */
+  src: url('../font/font_3925386_g7hjl4o9d26.woff2') format('woff2'),
+       url('../font/font_3925386_g7hjl4o9d26.woff') format('woff'),
+       url('../font/font_3925386_g7hjl4o9d26.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Snapchat:before {
+  content: "\ea33";
+}
+
+.icon-kakaotalk:before {
+  content: "\e601";
+}
+
+.icon-icon_TikTok-square:before {
+  content: "\e602";
+}
+
+.icon-facebook:before {
+  content: "\e65a";
+}
+
+.icon-QQ:before {
+  content: "\e73e";
+}
+
+.icon-VK:before {
+  content: "\e68d";
+}
+
+.icon-whatsapp:before {
+  content: "\e63e";
+}
+
+.icon-email-fill:before {
+  content: "\e77e";
+}
+
+.icon-youtube:before {
+  content: "\ea07";
+}
+
+.icon-github:before {
+  content: "\e66f";
+}
+
+.icon-twitter-circle-fill:before {
+  content: "\ea90";
+}
+
+.icon-icon_bilibili-circle:before {
+  content: "\e600";
+}
+
+.icon-Other-27:before {
+  content: "\e640";
+}
+
+.icon-gitee:before {
+  content: "\e60c";
+}
+
