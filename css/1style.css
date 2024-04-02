@@ -400,3 +400,23 @@ overflow-y: auto;
         grid-template-columns: 1fr;
     }
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
