@@ -79,26 +79,28 @@
 
 
 
- 	<button id="button" type="submit" style="height: 40px;"><h1>点击复制微信号</h1></button></span></center>
 
+<button id="button" type="submit" style="height: 40px;"><h1>点击复制微信号</h1></button></span></center>
 
- <!--点击复制加载开始-->
- <script type="text/javascript">
-             var clipboard = new Clipboard('button', {
-                 text: function() {
-                     return "CoverJuanita";
-                 }
-             });
-             clipboard.on('success', function(e) {
-                 alert('复制成功,即将前往微信！');
-               window.location.href='weixin://';
-
-             });
-             clipboard.on('error', function(e) {
-                alert('复制失败,请手动输入：CoverJuanita');
-               window.location.href='weixin://';
-             });
- </script>	<a 
+<!--点击复制加载开始-->
+<script type="text/javascript">
+    var clipboard = new Clipboard('button', {
+        text: function() {
+            return "CoverJuanita";
+        }
+    });
+    clipboard.on('success', function(e) {
+        document.getElementById("copy-message").innerHTML = '复制成功,即将前往微信！';
+        setTimeout(function() {
+            window.location.href = 'weixin://';
+        }, 2000); // 2秒后尝试打开微信应用
+    });
+    clipboard.on('error', function(e) {
+        document.getElementById("copy-message").innerHTML = '复制失败，请手动输入：CoverJuanita';
+    });
+</script>
+<div id="copy-message"></div> <!-- 显示复制结果的容器 -->
+<a 
           
    href="mailto:677116@gmail.com" class="main-bot-tb-4" title="邮件">
 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youjian"></use></svg>
