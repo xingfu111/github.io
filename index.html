@@ -79,29 +79,29 @@
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youjian"></use></svg>
 </a>
 
-<a  id="button" class="main-bot-tb-5" title="微信">
+<a id="button" class="main-bot-tb-5" title="微信">
   <svg class="icon" aria-hidden="true"><use xlink:href="#icon-weixin1"></use></svg>
 </a>
 
-   <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 
 <!--点击复制加载开始-->
 <script type="text/javascript">
-            var clipboard = new Clipboard('button', {
-                text: function() {
-                    return "CoverJuanita";
-                }
-            });
-            clipboard.on('success', function(e) {
-                alert('复制成功,即将前往微信！');
-              window.location.href='weixin://';
-              
-            });
-            clipboard.on('error', function(e) {
-               alert('复制失败,请手动输入：CoverJuanita');
-              window.location.href='weixin://';
-            });
-</script>	  
+var clipboard = new Clipboard('#button', {
+    text: function() {
+        return "CoverJuanita";
+    }
+});
+clipboard.on('success', function(e) {
+    alert('复制成功，即将前往微信！');
+    window.location.href='weixin://';
+});
+clipboard.on('error', function(e) {
+    alert('复制失败，请手动输入：CoverJuanita');
+    window.location.href='weixin://';
+});
+</script>
+	  
 </div></p>
 <div class="footer">
             Copyright © 2022- 
