@@ -86,7 +86,9 @@
    href="mailto:677116@gmail.com" class="main-bot-tb-4" title="邮件">
 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youjian"></use></svg>
 </a>
-   <button id="button" type="submit" style="height: 40px;"><h1>点击复制微信号</h1></button>
+  <button id="button" type="submit" style="height: 40px;"><h1>微信号</h1></button>
+
+<div id="message"></div>
 
 <script type="text/javascript">
     var Clipboard = new Clipboard('button', {
@@ -96,15 +98,19 @@
     });
 
     Clipboard.on('success', function(e) {
-        alert('复制成功,即将前往微信！');
-        window.location.href = 'weixin://';
+        var messageElement = document.getElementById("message");
+        messageElement.innerHTML = '复制成功,即将前往微信！';
+        setTimeout(function() {
+            window.location.href = 'weixin://';
+        }, 2000); // 延迟2秒跳转到微信应用
     });
 
     Clipboard.on('error', function(e) {
-        alert('复制失败,请手动输入：CoverJuanita');
-        window.location.href = 'weixin://';
+        var messageElement = document.getElementById("message");
+        messageElement.innerHTML = '复制失败，请手动输入：CoverJuanita';
     });
 </script>
+
                 </div>
 </div></p>
 <div class="footer">
