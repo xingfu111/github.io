@@ -219,7 +219,37 @@ return false;
         } 
     }
 </script>
+<audio id="myAudio" src="xingfu111.github.io/不如见一面-海来阿木-单依纯.mp3" autoplay></audio>
 
+<script>
+// 创建一个 Audio 对象
+var audio = document.getElementById('myAudio');
+
+// 播放音乐
+function playMusic() {
+    audio.play();
+}
+
+// 停止音乐
+function stopMusic() {
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+// 每次音乐播放完成后重新播放
+audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+});
+
+// 每隔一段时间检查音乐播放状态
+setInterval(function() {
+    // 如果音乐已经停止播放，重新播放音乐
+    if (audio.paused) {
+        playMusic();
+    }
+}, 1000); // 1000 毫秒即 1 秒，可以根据需要调整间隔时间
+</script>
 <div class="footer">
     Copyright © 2022- <?php echo date("Y"); ?> &copy;
     <a href="#" class="footer-link">幸福111</a>
