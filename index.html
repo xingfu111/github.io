@@ -219,37 +219,34 @@ return false;
         } 
     }
 </script>
-<audio id="myAudio" src="https://xingfu111.github.io/不如见一面-海来阿木-单依纯.mp3" autoplay></audio>
+<div class="tooltips">
+			
+<audio loop="" src="https://xingfu111.com/%E4%B8%8D%E5%A6%82%E8%A7%81%E4%B8%80%E9%9D%A2-%E6%B5%B7%E6%9D%A5%E9%98%BF%E6%9C%A8-%E5%8D%95%E4%BE%9D%E7%BA%AF.mp3" id="audio" autoplay="" preload="auto">该浏览器不支持audio属性</audio>
+			
+<script type="text/javascript">
+				//--创建页面监听，等待微信端页面加载完毕 触发音频播放
+				document.addEventListener('DOMContentLoaded', function() {
+					function audioAutoPlay() {
+						var audio = document.getElementById('audio');
+						audio.play();
+						document.addEventListener("WeixinJSBridgeReady", function() {
+							audio.play();
+						}, false);
+					}
+					audioAutoPlay();
+				});
+				//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+				document.addEventListener('touchstart', function() {
+					function audioAutoPlay() {
+						var audio = document.getElementById('audio');
+						audio.play();
+					}
+					audioAutoPlay();
+				});
+			</script>
 
-<script>
-// 创建一个 Audio 对象
-var audio = document.getElementById('myAudio');
 
-// 播放音乐
-function playMusic() {
-    audio.play();
-}
-
-// 停止音乐
-function stopMusic() {
-    audio.pause();
-    audio.currentTime = 0;
-}
-
-// 每次音乐播放完成后重新播放
-audio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-});
-
-// 每隔一段时间检查音乐播放状态
-setInterval(function() {
-    // 如果音乐已经停止播放，重新播放音乐
-    if (audio.paused) {
-        playMusic();
-    }
-}, 1000); // 1000 毫秒即 1 秒，可以根据需要调整间隔时间
-</script>
+</div>
 <div class="footer">
     Copyright © 2022- <?php echo date("Y"); ?> &copy;
     <a href="#" class="footer-link">幸福111</a>
