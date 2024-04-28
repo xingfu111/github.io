@@ -1,0 +1,17 @@
+#!name=酷我音乐&酷我畅听解锁
+#!desc=🔗 [2024/4/28 20:54:47] 影子
+#!author=影子
+#!icon=https://file.napi.ltd/Static/Image/KuWo.png
+#!openUrl=https://napi.ltd
+#!homepage=https://napi.ltd
+#!date=2024-04-28
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://napi.ltd/script/Worker/KuWo.js/_end_/KuWo.sgmodule?headers=User-Agent%3ALoon%2F687%20CFNetwork%2F1494.0.7%20Darwin%2F23.4.0&n=%E9%85%B7%E6%88%91%E9%9F%B3%E4%B9%90%26%E9%85%B7%E6%88%91%E7%95%85%E5%90%AC%E8%A7%A3%E9%94%81%2B%E5%BD%B1%E5%AD%90&type=qx-rewrite&target=surge-module&del=true&evalScriptmodi=body%20%3D%20body.replace(%2F(%5E%5C%5BRule%5C%5D%5B%5Cs%5CS%5D*%3F)(%5E%5C%5B)%2Fm%2C%20'%242')
+
+
+[Script]
+酷我音乐 = type=http-response, pattern=^(?!.*img).*?(kuwo\.cn|lrts\.me)(/vip|/openapi)?(/enc|/audi.tion|/v[\d]/(user/vip\?(vers|apiVersion|platform|op\=ui|_t)|theme\?op=gd|sysinfo\?op=getRePayAndDoPayBoxNew|api(/pay)?/((user/personal/)?user/info|payInfo/kwplayer/payMiniBar|advert/(myPage|iListen|album))|album/myRec/vipMusic)|/kuwopay/vip-tab/setting|/(audioApi/)?a\.p($|.*?ptype\=vip)|/(EcomResource|(Mobile)?Ad)Serv(er|ice)), script-path=https://napi.ltd/script/Worker/KuWo.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% *.kuwo.cn, audiobookpay.lrts.me
