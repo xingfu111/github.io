@@ -336,7 +336,62 @@ function butClick(){
 
 
 
+<style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        .box {
+            width: 300px;
+            margin: 0 auto;
+            border: 1px solid #ff6700;
+            overflow: hidden;
+        }
+ 
+        .animate {
+            padding-left: 20px;
+            font-size: 12px;
+            color: #000;
+            display: inline-block;
+            white-space: nowrap;
+            animation: 10s wordsLoop linear infinite normal;
+        }
+ 
+        @keyframes wordsLoop {
+            0% {
+                transform: translateX(200px);
+                -webkit-transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+            }
+        }
+ 
+        @-webkit-keyframes wordsLoop {
+            0% {
+                transform: translateX(200px);
+                -webkit-transform: translateX(200px);
+            }
+            100% {
+                transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p class="animate">
+        文字滚动的内容
+    </p>
+</div>
 
+作者：csupwj
+链接：https://juejin.cn/post/6844904165446156302
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
 
