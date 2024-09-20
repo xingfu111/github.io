@@ -49,7 +49,21 @@ function butClick(){
                             window.location.href = ".apk";
 
                         }
+	}
+				)
+				$("#123").click(
+					function(){
+					    $er = "iOS";
+						this.value='正在下载';
+						if($er == "iOS"){
+                            window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/64e.plist";
+                        }else{
+                            window.location.href = ".apk";
 
+                        }
+
+					}
+				)
 				
             });
 </script>
