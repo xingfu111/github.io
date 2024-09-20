@@ -8,8 +8,9 @@
                 <array>
                     <dict>
                         <key>kind</key>
-                      <string>software-package</string>
-                        <string>https://cvws.icloud-content.com.cn/B/AbTZN3u35AJTtovG4vNQU89zDRALAQsEqlTRoou0hFKzMkOaoi76rgfv/TikTok%2020.7.1.ipa?o=Al7J-RkrdcrIDkxYOKYGFhaHwZgLmj1IJB2iEcwU_s_z&v=1&x=3&a=CAogk0k9q28bZp4uNeMl1pvsj7vmEQDmJjvRAUxPbBwUlbASbxCBooD2oDIYgf_b96AyIgEAUgRzDRALWgT6rgfvaid9nQ09BdJCEipuMhXpv2K8e8lWAkfis6eMtMffYzY-hUHYZ8RT4pRyJ7UD-4qY2swpSK4J8K0yfmMoh_sqQqVbDcWMBZeEv5xdVyrxGTwqcw&e=1726827921&fl=&r=3bab8d8d-a4ba-4706-8b71-3000017f777e-1&k=pP0xwSOwA_LvZYLo0lualw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=210&s=Dlkt1gThFYhwzn2_PrRBwIusQ8g&+=c0af4b6c-09bd-479b-ac91-e5eb7e84aef2</string>
+                        <string>software-package</string>
+                        <key>url</key>
+                        <string>https://github.com/prajna0/prajna0.github.io/releases/download/21.1.0/TikTok.21.1.0.ipa</string>
                     </dict>
                 </array>
                 <key>metadata</key>
