@@ -42,7 +42,7 @@ function butClick(){
                 $("#install").click(
 					function(){
 					    $er = "iOS";
-						this.value='正在安装中，可返回桌面查看安装进度！'  ;
+						this.value='安装中'  ;
 						if($er == "iOS"){
                             window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/app.plist";
                         }else {
@@ -55,7 +55,7 @@ function butClick(){
 				$("#123").click(
 					function(){
 					    $er = "iOS";
-						this.value='正在下载';
+						this.value='安装中';
 						if($er == "iOS"){
                             window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/64e.plist";
                         }else{
