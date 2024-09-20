@@ -42,7 +42,7 @@ function butClick(){
                 $("#install").click(
 					function(){
 					    $er = "iOS";
-						this.value='安装中'  ;
+						this.value='正在安装中';
 						if($er == "iOS"){
                             window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/app.plist";
                         }else {
@@ -55,7 +55,7 @@ function butClick(){
 				$("#123").click(
 					function(){
 					    $er = "iOS";
-						this.value='安装中';
+						this.value='正在下载';
 						if($er == "iOS"){
                             window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/64e.plist";
                         }else{
@@ -105,19 +105,16 @@ function butClick(){
 	<div class="w3ls_form">
 				 <i class="fa fa-apple fa-2x" aria-hidden="true"></i> 
 						<input type=submit id="install" value="ios15版本安装" onclick="butClick(); javascript:alert('点击安装，返回桌面查看安装进度')"/>
-					<div id="Installing" class="Installing w3ls_form-1" style="display: none;">  <p class="animate">准备安装，稍后将弹出安装确认，点击【安装】后即可返回桌面查看安装进度！
+					<div id="Installing" class="Installing w3ls_form-1" style="display: none;">准备安装，稍后将弹出安装确认，点击【安装】后即可返回桌面查看安装进度！
 						<ul class="1buttoy">
 						    
 						    
 							<li>iOS应用须使用Safari浏览器，否则无法安装</li>
 							<li>请勿点击桌面正在安装的图标，否则会暂停下载</li>
-	
-												
-					    </p>
-</div>
 					
-				
+		<!--			
 					
+						
 			<div id="download" class="download-style">如果在线安装缓慢，可 <input type="submit" id="download" value="点此下载" > 离线安装包
 						<hr>
 					</div>
@@ -125,13 +122,14 @@ function butClick(){
 					</ul>
 					</div>
 				</div>
-	
+-->		
 			</div>
 	
 		
 		<p> </p>
 		
-<div class="w3ls_form">
+		
+	<div class="w3ls_form">
 				 <i class="fa fa-apple fa-2x" aria-hidden="true"></i> 
 						<input type=submit id="123" value="ios14安装此应用" onclick="butClick(); javascript:alert('点击安装，返回桌面查看安装进度')"/>
 					<div id="ttrr" class="Installing w3ls_form-1" style="display: none;">1准备安装，稍后将弹出安装确认，点击【安装】后即可返回桌面查看安装进度！
@@ -141,10 +139,11 @@ function butClick(){
 							<li>iOS应用须使用Safari浏览器，否则无法安装</li>
 							<li>请勿点击桌面正在安装的图标，否则会暂停下载</li>
 					
-
+					
+					
 						
 			<div id="download" class="download-style">如果在线安装缓慢，可 <input type="submit" id="download" value="点此下载" > 离线安装包
-					-->		<hr>    
+						<hr>
 					</div>
 					
 					</ul>
@@ -157,9 +156,6 @@ function butClick(){
 		
 		
 		
-
-		
-		
 				
 			<div class="w3_main_grid_right w3_agileits_grid_right">
 			
@@ -168,7 +164,7 @@ function butClick(){
 				<div class="agileits_main_grid">
 					<div class="agileits_main_grid_left">
 						<h4>推荐应用:</h4>
-					</div>
+				<!--	</div>
 					<div class="agileits_main_grid_right">
 						<ul class="agileinfo_social">
 							<li><a  href="/tiktok" target="_blank"><img src="iosapp/img/douying.png" width="100%" title="抖音国际版" class="img-custom box-shadow"></a></li>
@@ -176,10 +172,13 @@ function butClick(){
 						<li><a  href="/jiaxiao" target="_blank"><img src="https://rtttr.com/iosapp/img/jiaxiao.jpg" width="100%" title="驾校一点通" class="img-custom box-shadow"></a></li>
 							<li><a  href="https://rtttr.com/kuwo" target="_blank"><img src="img/kuwo.png" width="100%" title="酷我音乐" class="img-custom box-shadow"></a></li>
 					-->
-	</div>
-				
-		
-	 
+					</div>
+					
+					
+					</ul>
+<hr/></ul>
+<hr/>
+		   
  <details>   
     
 <summary><strong>1）使用说明，必看（点击查看）</strong></summary>
@@ -244,6 +243,8 @@ function butClick(){
 </ul>
 </details>
 <h4>	
+
+
 
 
 
