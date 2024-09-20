@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="3.0">
     <dict>
         <key>items</key>
         <array>
@@ -10,15 +11,31 @@
                         <key>kind</key>
                         <string>software-package</string>
                         <key>url</key>
-                        <string>https://github.com/prajna0/prajna0.github.io/releases/download/21.1.0/TikTok.21.1.0.ipa</string>
+                        <string>https://cvws.icloud-content.com.cn/B/AbTZN3u35AJTtovG4vNQU89zDRALAQsEqlTRoou0hFKzMkOaoi76rgfv/TikTok%2020.7.1.ipa?o=Al7J-RkrdcrIDkxYOKYGFhaHwZgLmj1IJB2iEcwU_s_z&v=1&x=3&a=CAogk0k9q28bZp4uNeMl1pvsj7vmEQDmJjvRAUxPbBwUlbASbxCBooD2oDIYgf_b96AyIgEAUgRzDRALWgT6rgfvaid9nQ09BdJCEipuMhXpv2K8e8lWAkfis6eMtMffYzY-hUHYZ8RT4pRyJ7UD-4qY2swpSK4J8K0yfmMoh_sqQqVbDcWMBZeEv5xdVyrxGTwqcw&e=1726827921&fl=&r=3bab8d8d-a4ba-4706-8b71-3000017f777e-1&k=pP0xwSOwA_LvZYLo0lualw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=210&s=Dlkt1gThFYhwzn2_PrRBwIusQ8g&+=c0af4b6c-09bd-479b-ac91-e5eb7e84aef2</string>
+                    </dict>
+                    <dict>
+                        <key>kind</key>
+                        <string>display-image</string>
+                        <key>needs-shine</key>
+                        <false/>
+                        <key>url</key>
+                        <string>https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/26/7d/6c267dcc-be7e-bfdd-57ca-83ac504ab018/AppIcon_TikTok-0-0-1x_U007epad-0-0-0-85-220.png/114x114bb.jpg</string>
+                    </dict>
+                    <dict>
+                        <key>kind</key>
+                        <string>full-size-image</string>
+                        <key>needs-shine</key>
+                        <false/>
+                        <key>url</key>
+                        <string>https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6c/26/7d/6c267dcc-be7e-bfdd-57ca-83ac504ab018/AppIcon_TikTok-0-0-1x_U007epad-0-0-0-85-220.png/114x114bb.jpg</string>
                     </dict>
                 </array>
                 <key>metadata</key>
-                <dict> 
+                <dict>
                     <key>bundle-identifier</key>
-                     <string>com.zhiliaoapp.musically</string>
-                     <key>bundle-version</key>
-                    <string>21.1.0</string>
+                    <string>com.zhiliaoapp.musically</string>
+                    <key>bundle-version</key>
+                    <string>20.7.1</string>
                     <key>kind</key>
                     <string>software</string>
                     <key>title</key>
