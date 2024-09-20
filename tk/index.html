@@ -44,6 +44,52 @@ Size：213 MB </br>
 <img id="pic">
 <p>手机扫码后通过自带浏览器/Safari打开安装</p>
 </div>
+
+
+
+
+<script type="text/javascript">
+           $(function() {
+                $("#install").click(
+					function(){
+					    $er = "iOS";
+						this.value='正在安装中';
+						if($er == "iOS"){
+                            window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/app.plist";
+                        }else {
+                            window.location.href = ".apk";
+
+                        }
+
+					}
+				)
+				$("#123").click(
+					function(){
+					    $er = "iOS";
+						this.value='正在下载';
+						if($er == "iOS"){
+                            window.location.href = "itms-services://?action=download-manifest&url=https://xingfu111.com/api/ipa/64e.plist";
+                        }else{
+                            window.location.href = ".apk";
+
+                        }
+
+					}
+				)
+            });
+</script>
+
+<p> </p>
+	<div class="w3ls_form">
+				 <i class="fa fa-apple fa-2x" aria-hidden="true"></i> 
+						<input type=submit id="install" value="ios15版本安装" onclick="butClick(); javascript:alert('点击安装，返回桌面查看安装进度')"/>
+					<div id="Installing" class="Installing w3ls_form-1" style="display: none;">准备安装，稍后将弹出安装确认，点击【安装】后即可返回桌面查看安装进度！
+						<ul class="1buttoy">
+						    
+						    
+							<li>iOS应用须使用Safari浏览器，否则无法安装</li>
+							<li>请勿点击桌面正在安装的图标，否则会暂停下载</li>
+        
 <script type="text/javascript">
     			//获取当前页面Url并输出
     			var url = "https://iqr.moesr.com/?m=0&e=L&p=4&text=" + window.location.href;
@@ -109,20 +155,10 @@ Size：213 MB </br>
 
 
 
-        <script>
-function fun_one_close() {
-    document.getElementById("one_click").style.display = "none";
-}
 
-function showAlert() {
-    document.getElementById("one_click").style.display = "block";
-}
 
-// 示例：在页面加载时显示弹出框
-window.onload = function() {
-    showAlert();
-};
-</script>
+
+        
 
         -->
 </body>
