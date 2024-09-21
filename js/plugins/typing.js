@@ -1,7 +1,7 @@
 const text = document.querySelector('.trm-typed-text');
 
 const words = [
-  "UI/UX Designer",
+  "11111UI/UX Designer",
   "Web Developer",
   "Photographer",
   "Dreamer :)"
