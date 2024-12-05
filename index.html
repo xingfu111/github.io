@@ -4,24 +4,27 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>幸福111</title>
-    <meta name='description'content='幸福111，xingfu111，xingfu111.com，与你同在。'>
     <meta name='description' content='幸福111，xingfu111，xingfu111.com，与你同在。'>
     <link rel='icon' href='/img/favicon.png' type='image/x-icon'>
     <link rel='stylesheet' href='/css/styles-xingfu111.css'>
-    
-    <!-- 引入 Font Awesome 图标库 -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'>
-    
 </head>
 <body>
 
-    <!-- Top Menu -->
+    <!-- 顶部菜单 -->
     <header>
+        <!-- 网站图标 -->
+        <div class='site-logo'>
+            <img src='/img/favicon.png' alt='网站图标' height='30' width='30'>
+        </div>
+
+        <!-- 菜单按钮 -->
         <div class='hamburger' onclick='toggleMenu()'>
             <div></div>
             <div></div>
             <div></div>
         </div>
+        
         <ul class='nav-links'>
             <li><a href='/'><svg class='icon' aria-hidden='true'>
                 <use xlink:href='#icon-a-013_wodezhuye'></use>
@@ -32,7 +35,7 @@
             <li><a href='/'><svg class='icon' aria-hidden='true'>
                 <use xlink:href='#icon-QQ'></use>
             </svg>联系我们</a></li>
-             <li><a href='mailto:677116@gmail.com'><svg class='icon' aria-hidden='true'>
+            <li><a href='mailto:677116@gmail.com'><svg class='icon' aria-hidden='true'>
                 <use xlink:href='#icon-Gmail'></use>
             </svg>邮件</a></li>
         </ul>
@@ -48,50 +51,23 @@
     <button id='darkModeToggle' onclick='toggleDarkMode()'>
         <i id='modeIcon' class='fas fa-sun'></i> 
     </button>
- 
- 
-   
-<script type='text/javascript'>
- 
-     // 生成二维码的URL，基于当前页面的URL
-    var url = 'https://api.xingfu111.com/QRcode/?m=0&e=L&p=5&url=' + window.location.href;
 
-    window.onload = function() {
-        var ua = navigator.userAgent.toLowerCase();
-
-        // 检查是否为移动设备
-        if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1 || ua.indexOf('ipod') > -1 || ua.indexOf('android') > -1) {
-            // 如果是移动端，确保二维码不显示
-            var qrCodeElement = document.getElementById('qrcode');
-            if (qrCodeElement) {
-                qrCodeElement.style.display = 'none'; // 隐藏二维码
-            }
-        } else {
-            // 如果是桌面端，显示二维码并加载二维码图片
-            var picElement = document.getElementById('pic');
-            if (picElement) {
-                picElement.src = url; // 设置二维码图片的URL
-            }
-
-            var qrCodeElement = document.getElementById('qrcode');
-            if (qrCodeElement) {
-                qrCodeElement.style.display = 'block'; // 显示二维码
-            }
-        }
-    };
-</script>
     <footer> 
-      <!--<img id='pic'><br> -->
-    <center><font color='#FF6666'>富强</font>丨<font color='#336666'>民主</font>丨<font color='#009966'>文明</font>丨<font color='#FF0000'>和谐</font>丨<font color='#6666CC'>自由</font>丨<font color='#33CC33'>平等</font>丨<font color='#6666cc'>公正 </font>丨<font color='#FF6666'>法制丨<font color='#336666'>爱国</font>丨<font color='#009966'>敬业</font>丨<font color='#FF9933'>诚信</font>丨<font color='#6666CC'>友善</font></font>   
-      <br>
-     <img src='/img/favicon.png' alt='Copyright Icon'>
-         Copyright &copy; 2024 幸福111 
+        <center>
+            <font color='#FF6666'>富强</font>丨<font color='#336666'>民主</font>丨<font color='#009966'>文明</font>丨<font color='#FF0000'>和谐</font>丨
+            <font color='#6666CC'>自由</font>丨<font color='#33CC33'>平等</font>丨<font color='#6666cc'>公正 </font>丨
+            <font color='#FF6666'>法制</font>丨<font color='#336666'>爱国</font>丨<font color='#009966'>敬业</font>丨
+            <font color='#FF9933'>诚信</font>丨<font color='#6666CC'>友善</font>
+            <br>
+            <img src='/img/favicon.png' alt='Copyright Icon'>
+            Copyright &copy; 2024 幸福111
+        </center>
     </footer>
 
     <script src='/js/iconfont.js'></script>
     <script src='/js/xuehua.js'></script>
     <script>
-        // 处理菜单切换
+        // 菜单切换
         function toggleMenu() {
             var menu = document.querySelector('.nav-links');
             menu.classList.toggle('active');
@@ -99,7 +75,7 @@
             hamburger.classList.toggle('active');
         }
 
-        // 检查 localStorage 是否有深色模式设置
+        // 检查深色模式
         if (localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
             document.getElementById('modeIcon').classList.remove('fa-sun');
@@ -110,7 +86,6 @@
             var body = document.body;
             var icon = document.getElementById('modeIcon');
             body.classList.toggle('dark-mode');
-            // 切换图标
             if (body.classList.contains('dark-mode')) {
                 icon.classList.remove('fa-sun');
                 icon.classList.add('fa-moon');
@@ -121,17 +96,6 @@
                 localStorage.setItem('darkMode', 'disabled');
             }
         }
-         // 复制链接到剪贴板的功能
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert('链接已复制到剪贴板：' + text);
-            }).catch(err => {
-                console.error('复制失败', err);
-            });
-        }
-        var sf = new Snowflakes({
-color: '#cccccc'
-});
     </script>
 
 </body>
