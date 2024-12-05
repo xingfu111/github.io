@@ -271,3 +271,28 @@ footer a:hover {
             display: none; /* 移动端完全隐藏二维码 */
         }
     }
+/* 顶部菜单样式 */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+/* 网站图标样式 */
+.site-logo {
+    position: absolute;
+    left: 10px; /* 网页版左对齐 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .site-logo {
+        left: 50%; /* 移动端居中 */
+        transform: translate(-50%, -50%);
+    }
+}
