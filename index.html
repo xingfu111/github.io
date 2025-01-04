@@ -4,10 +4,9 @@
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>幸福111</title>
-    <meta name='description'content='幸福111，xingfu111，xingfu111.com，与你同在。'>
     <meta name='description' content='幸福111，xingfu111，xingfu111.com，与你同在。'>
     <link rel='icon' href='/img/favicon.png' type='image/x-icon'>
-    <link rel='stylesheet' href='/css/styles-xingfu111.css'>
+    <link rel='stylesheet' href='https://api.xingfu111.com/css/styles.css'>
     
     <!-- 引入 Font Awesome 图标库 -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'>
@@ -40,16 +39,27 @@
 
     <div class='example'>
         <div class='code'>
-            <img src='https://oss.suning.com/mbap/mbapbk/86b6b9076cb85593ddc56f3431827800.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1732857159&Signature=2eDXVAHm9mvl3N88gHCufCDeiNw%3D' height='140' width='290' alt='Banner Image'>
+            <!--   <img src='https://oss.suning.com/mbap/mbapbk/86b6b9076cb85593ddc56f3431827800.png?SDOSSAccessKeyId=42IA0GY51YZ1397N&Expires=1732857159&Signature=2eDXVAHm9mvl3N88gHCufCDeiNw%3D' height='140' width='290' alt='Banner Image'>  -->
+   <div id='svgBox'>
+    <svg width='100%' height='100'>
+        <text text-anchor='middle' x='50%' y='50%' class='text text-1'>幸福111</text>
+        <text text-anchor='middle' x='50%' y='50%' class='text text-2'>幸福111</text>
+        <text text-anchor='middle' x='50%' y='50%' class='text text-3'>幸福111</text>
+        <text text-anchor='middle' x='50%' y='50%' class='text text-4'>幸福111</text>
+    </svg>
+</div>
+
+
+
         </div>
     </div>
 
-    <!-- 深色模式切换按钮 -->
+    <!-- 深色模式切换按钮
     <button id='darkModeToggle' onclick='toggleDarkMode()'>
         <i id='modeIcon' class='fas fa-sun'></i> 
     </button>
  
- 
+  -->
    
 <script type='text/javascript'>
  
@@ -81,15 +91,17 @@
     };
 </script>
     <footer> 
-      <!--<img id='pic'><br> -->
+     
+  
     <center><font color='#FF6666'>富强</font>丨<font color='#336666'>民主</font>丨<font color='#009966'>文明</font>丨<font color='#FF0000'>和谐</font>丨<font color='#6666CC'>自由</font>丨<font color='#33CC33'>平等</font>丨<font color='#6666cc'>公正 </font>丨<font color='#FF6666'>法制丨<font color='#336666'>爱国</font>丨<font color='#009966'>敬业</font>丨<font color='#FF9933'>诚信</font>丨<font color='#6666CC'>友善</font></font>   
       <br>
      <img src='/img/favicon.png' alt='Copyright Icon'>
-         Copyright &copy; 2024 幸福111 
+         Copyright &copy; $current_year 幸福111 
+        <img id='pic' alt='QR Code'>
     </footer>
-
-    <script src='/js/iconfont.js'></script>
-    <script src='/js/xuehua.js'></script>
+<script src='https://api.xingfu111.com/js/background.js'></script>
+    <script src='https://api.xingfu111.com/js/iconfont.js'></script>
+    <script src='https://$currentDomain/js/xuehua.js'></script>
     <script>
         // 处理菜单切换
         function toggleMenu() {
@@ -133,6 +145,6 @@
 color: '#cccccc'
 });
     </script>
- <script src='https://api.xingfu111.com/js/iconfont.js'></script>
+
 </body>
 </html>
