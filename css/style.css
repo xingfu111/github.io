@@ -284,26 +284,6 @@ main {
      
 
 
-  /* 样式 */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        #qrcode {
-            margin-top: 20px;
-        }
-        #qrcode img {
-            width: 200px;
-            height: 200px;
-        }
-        /* 默认隐藏二维码（移动端通过 CSS media query 隐藏） */
-        @media (max-width: 768px) {
-            #qrcode {
-                display: none;
-            }
-        }
-    
  
    /* 示例框 */
 .example {
